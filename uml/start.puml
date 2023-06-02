@@ -1,0 +1,29 @@
+@startuml
+
+rectangle Workspaces{
+    class Workspace{
+        id
+        nodes
+        addNode()
+    }
+    class Node{
+        id
+        property
+    }
+    class Connector{
+        fromElement
+        toElement
+    }
+    class NodeElement{}
+    class NodeElementTitle{}
+    class NodeElementText{}
+    class NodeElementImage{}
+}
+
+Workspace->Node
+Node->NodeElement
+NodeElement<|--NodeElementTitle
+NodeElement<|--NodeElementText
+NodeElement<|--NodeElementImage
+Workspace-->Connector
+@enduml
